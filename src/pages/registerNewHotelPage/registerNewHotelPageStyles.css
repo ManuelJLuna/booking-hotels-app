@@ -1,0 +1,87 @@
+.registerNewHotelPage {
+    text-align: center;
+    width: 65%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(162, 232, 241, 0.2);
+    box-shadow: 0 0 10px rgba(110, 193, 199, 0.5);
+}
+
+h1 {
+    color: black;
+}
+
+.registerNewHotelInput {
+    margin: 10px auto;
+    display: block;
+    display: inline-block;
+}
+
+.registerNewHotelInput[type="text"],.registerNewHotelInput[type="email"],.registerNewHotelInput[type="url"],textarea {
+    width: 80%;
+    height: 35px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+}
+
+.registerNewHotelInput[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+    margin: 10px 3px;
+    display: inline-block;
+}
+.registerNewHotelInput[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+textarea {
+    display: inline-block;
+    height: 35vh;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    margin-top: 15px;
+}
+.hotelServices {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+.hotelServices>label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 40%;
+    width: 100%;
+}
+.registerNewHotelInput[type="file"]{
+    display: block;
+    height: 35px;
+}
+.submitButton {
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    height: 35px;
+    font-size: 20px;
+    padding: 0;
+    border-radius: 10px;
+    border: 1.5px outset rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+    transition: all 0.3s ease;
+}
+.submitButton:hover {
+    background-color: rgb(162, 232, 241);
+    border: 1.5px inset rgb(162, 232, 241);
+    cursor: pointer;
+}

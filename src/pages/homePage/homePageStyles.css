@@ -1,0 +1,45 @@
+.searchZone{
+    background-color: rgb(120, 210, 217);
+    width: 100%;
+    height: 22vh;
+    text-align: center;
+}
+h1{
+    color: rgb(234, 244, 245);
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    top: 5%;
+}
+h2{
+    color: rgb(234, 244, 245);
+    font-size: 30px;
+    position: relative;
+    margin-left: 15px;
+    top: 5px;
+}
+.searchInputHome{
+    width: 30%;
+    height: 30%;
+    margin: 15px 5px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 20px;
+    font-size: 20px;
+}
+.sendSearchButton{
+    width: 10%;
+    padding: 5px;
+}
+.hotelsCategories{
+    background-color: blue; /*TODO: remover el bc*/
+    width: 100%;
+    height: 50vh;
+}
+
+
+.hotelsSuggestions{
+    background-color: purple; /*TODO: remover el bc*/
+    width: 100%;
+    height: 50vh;  
+}
