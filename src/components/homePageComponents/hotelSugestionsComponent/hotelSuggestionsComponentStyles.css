@@ -1,0 +1,18 @@
+.hotelsSuggestions h2{
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    position: relative;
+    margin-left: 15px;
+    top: 5px;
+}
+
+.hotelsSuggestions{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.hotelsSuggestionsContainer{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+}

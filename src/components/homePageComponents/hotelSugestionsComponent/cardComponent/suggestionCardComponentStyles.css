@@ -1,0 +1,65 @@
+.cardComponent,
+.cardComponent * {
+    all: unset;
+    box-sizing: border-box;
+}
+
+.cardComponent {
+    width: 90%;
+    max-width: 800px;
+    height: 200px;
+    margin: 30px auto;
+    background-color: white;
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgb(251, 252, 254);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+.cardComponent:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.cardHotelImage {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardContent {
+    width: 65%;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+}
+
+.cardContent h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: start;
+}
+
+.cardHotelName {
+    margin: 10px 0;
+    color: #333;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cardContent .description {
+    align-self: center;
+}
+
+.cardContent .price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #008f5f;
+    align-self: end;
+}
