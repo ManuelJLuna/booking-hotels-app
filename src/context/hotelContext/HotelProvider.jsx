@@ -46,7 +46,6 @@ export const HotelProvider = ({ children }) => {
     }
   }
 
-  // PUT: Update a hotel by id
   const updateHotel = async (id, updatedHotel) => {
     try {
       const r = await fetch(`${URL_BASE}/${id}`, {

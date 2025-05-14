@@ -51,8 +51,8 @@ export const RegisterNewHotelPage = () => {
             hotelEmail: form.hotelEmail,
             hotelWebsite: form.hotelWebsite,
             hotelDescription: form.hotelDescription,
-            pricePerNight: 100, // TODO: AGREGAR AL FORM
-            hotelType: "Hotel", // TODO : AGREGAR AL FORM
+            pricePerNight: form.pricePerNight,
+            hotelType: form.hotelType,
             wifi: form.services.includes("wifi"),
             parking: form.services.includes("parking"),
             pool: form.services.includes("pool"),
@@ -97,6 +97,18 @@ export const RegisterNewHotelPage = () => {
                 <label htmlFor="hotelCountry">País</label>
                 <input className='registerNewHotelInput' type="text" name="hotelCountry" id="hotelCountry" value={form.hotelCountry} onChange={handleChange} />
 
+                <label htmlFor="hotelWebsite">Precio por noche</label>
+                <input className='registerNewHotelInput' type="number" name="pricePerNight" id="pricePerNight" value={form.pricePerNight} onChange={handleChange} />
+                
+                <label htmlFor="hotelWebsite">Tipo de hotel</label>
+                <select className='registerNewHotelInputSelect' name="hotelType" id="hotelType" value={form.hotelType} onChange={handleChange} placeholder='Eliga una opcion'>
+                    <option className='registerNewHotelInputSelectOption' value={null} disabled selected>Eliga una opcion</option>
+                    <option className='registerNewHotelInputSelectOption' value="Hotel">Hotel</option>
+                    <option className='registerNewHotelInputSelectOption' value="Motel">Motel</option>
+                    <option className='registerNewHotelInputSelectOption' value="Resort">Resort</option>
+                    <option className='registerNewHotelInputSelectOption' value="Bed&Breakfast">Bed & Breakfast</option>
+                </select>
+
                 <label htmlFor="hotelPhone">Teléfono</label>
                 <input className='registerNewHotelInput' type="number" name="hotelPhone" id="hotelPhone" value={form.hotelPhone} onChange={handleChange} />
 
@@ -105,6 +117,7 @@ export const RegisterNewHotelPage = () => {
 
                 <label htmlFor="hotelWebsite">Página Web</label>
                 <input className='registerNewHotelInput' type="url" name="hotelWebsite" id="hotelWebsite" value={form.hotelWebsite} onChange={handleChange} />
+                
 
                 <label htmlFor="hotelDescription">Descripción</label>
                 <textarea name="hotelDescription" id="hotelDescription" cols="30" rows="10" maxLength={516} value={form.hotelDescription} onChange={handleChange}></textarea>

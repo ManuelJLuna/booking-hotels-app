@@ -17,6 +17,16 @@ h1 {
     display: inline-block;
 }
 
+.registerNewHotelInputSelect,.registerNewHotelInputSelectOption{
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+}
+
 .registerNewHotelInput[type="text"],.registerNewHotelInput[type="number"],.registerNewHotelInput[type="email"],.registerNewHotelInput[type="url"],textarea {
     width: 80%;
     height: 35px;
