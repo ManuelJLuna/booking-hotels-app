@@ -17,7 +17,7 @@ h1 {
     display: inline-block;
 }
 
-.registerNewHotelInput[type="text"],.registerNewHotelInput[type="email"],.registerNewHotelInput[type="url"],textarea {
+.registerNewHotelInput[type="text"],.registerNewHotelInput[type="number"],.registerNewHotelInput[type="email"],.registerNewHotelInput[type="url"],textarea {
     width: 80%;
     height: 35px;
     font-size: 20px;
