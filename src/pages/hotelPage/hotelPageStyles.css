@@ -1,0 +1,133 @@
+.hotelPage{
+    padding: 30px;
+    margin: 15px;
+    background-color: rgb(251, 252, 254);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border: rgba(206, 239, 243, 0.4) solid 3px;
+    transition: all 0.3s ease;
+}
+.hotelPage:hover{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+.HotelPageAllInfoContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.hotelPageContainerImage img{
+    position: relative;
+    width: 75%;
+    height: 75%;
+    margin: 0;
+    object-fit: cover;
+}
+.hotelPageContainerImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    margin-right: 35px;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    border: rgba(206, 239, 243, 0.3) solid 3px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+.hotelPageContainerImage:hover{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+.HotelPageGeneralInfoHeader h1{
+    font-size: 3rem;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
+}
+.HotelPageGeneralInfoHeader p{
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: left;
+}
+.HotelPageGeneralInfo h2{
+    font-size: 2rem;
+    margin: 20px 30px;
+    padding: 0;
+    color: #333;
+    text-align: left;
+}
+.HotelPageGeneralInfo p{
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    text-align: left;
+}
+.hotelPageContainerServices{
+    display: grid;
+    background-color: rgba(231, 239, 255, 0.2);
+    padding: 0;
+    margin: 30px 0 0 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: rgba(206, 239, 243, 0.3) solid 3px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    columns: 3;
+}
+.hotelPageContainerServices:hover{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hotelPageContainerServicesList > * {
+    display: inline-block;
+}
+
+.hotelPageContainerServices h2{
+    font-size: 2rem;
+    margin: 0 0 25px 40px;
+    padding: 0;
+    color: #333;
+    text-align: left;
+    display: block;
+}
+.hotelPageContainerServicesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+    justify-content: start;
+    padding: 0;
+    margin: 0;
+}
+
+.hotelPageContainerServicesList li {
+    display: block;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5px 0 0 15px;
+    padding: 0;
+    color: #333;
+    text-align: left;
+}
+
+.bookHotelButton{
+    margin: 20px 0 0 0;
+    padding: 10px 10px;
+    width: 40%;
+    background-color: rgb(162, 232, 241);
+    border-radius: 15px;
+    border: rgb(229, 242, 252) 1px outset;
+    font-size: 23px;
+    float: right;
+    transition: all 0.3s ease;
+}
+.bookHotelButton:hover{
+    background-color: rgb(162, 244, 255);
+    border: rgb(229, 242, 252) 1px inset;
+    cursor: pointer;
+}
