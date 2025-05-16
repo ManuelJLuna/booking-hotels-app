@@ -33,10 +33,11 @@
     border-radius: 10px;
     border: rgba(206, 239, 243, 0.3) solid 3px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, transform 0.7s ease;
 }
 .hotelPageContainerImage:hover{
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.03);
 }
 .HotelPageGeneralInfoHeader h1{
     font-size: 3rem;
@@ -83,10 +84,6 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.hotelPageContainerServicesList > * {
-    display: inline-block;
-}
-
 .hotelPageContainerServices h2{
     font-size: 2rem;
     margin: 0 0 25px 40px;
@@ -103,6 +100,7 @@
     justify-content: start;
     padding: 0;
     margin: 0;
+    margin-bottom: 30px;
 }
 
 .hotelPageContainerServicesList li {

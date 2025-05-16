@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CardComponent } from './cardComponent/SuggestionCardComponent';
+import { CardComponent } from '../../cardComponent/SuggestionCardComponent';
 import { HotelContext } from '../../../context/hotelContext/HotelContext';
 import './hotelSuggestionsComponentStyles.css'
 
@@ -18,25 +18,19 @@ export const HotelSuggestionsComponent = () => {
     const hotels = context?.hotels || [];
 
     return (
-    // { /* <div className='hotelsSuggestions'>
-    //             <h2>Recomendaciones</h2>
-    //             <div className='hotelsSuggestionsContainer'>
-    //                 {hotels.length > 0 ? (
-    //                     hotels.map(hotel => (
-    //                         <CardComponent
-    //                             hotel={hotel}
-    //                         />
-    //                     ))
-    //                 ) : (
-    //                     <p>No hay hoteles disponibles.</p>
-    //                 )}
-    //                 </div>  */ }
-    // /* ESTO ES SOLO PARA PROBAR LAS CARDS, UNA VEZ FINALIZADO ELIMINAR Y DESCOMENTAR */
-    <div className='hotelsSuggestions'>
-        <h2>Recomendaciones</h2>
-        <div className='hotelsSuggestionsContainer'>
-            {<CardComponent hotel={hotelHarcode} />}
+        <div className='hotelsSuggestions'>
+            <h2>Recomendaciones</h2>
+            <div className='hotelsSuggestionsContainer'>
+                {hotels.length > 0 ? (
+                    hotels.map(hotel => (
+                        <CardComponent
+                            hotel={hotel}
+                        />
+                    ))
+                ) : (
+                    <p>No hay hoteles disponibles.</p>
+                )}
+            </div>
         </div>
-    </div>
-)
+            )
 }

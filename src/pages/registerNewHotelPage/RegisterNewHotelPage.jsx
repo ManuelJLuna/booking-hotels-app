@@ -103,10 +103,10 @@ export const RegisterNewHotelPage = () => {
                 <label htmlFor="hotelWebsite">Tipo de hotel</label>
                 <select className='registerNewHotelInputSelect' name="hotelType" id="hotelType" value={form.hotelType} onChange={handleChange} placeholder='Eliga una opcion'>
                     <option className='registerNewHotelInputSelectOption' value={null} disabled selected>Eliga una opcion</option>
-                    <option className='registerNewHotelInputSelectOption' value="Hotel">Hotel</option>
-                    <option className='registerNewHotelInputSelectOption' value="Motel">Motel</option>
-                    <option className='registerNewHotelInputSelectOption' value="Resort">Resort</option>
-                    <option className='registerNewHotelInputSelectOption' value="Bed&Breakfast">Bed & Breakfast</option>
+                    <option className='registerNewHotelInputSelectOption' value="hotel">Hotel</option>
+                    <option className='registerNewHotelInputSelectOption' value="motel">Motel</option>
+                    <option className='registerNewHotelInputSelectOption' value="resort">Resort</option>
+                    <option className='registerNewHotelInputSelectOption' value="bedandbreakfast">Bed & Breakfast</option>
                 </select>
 
                 <label htmlFor="hotelPhone">Teléfono</label>

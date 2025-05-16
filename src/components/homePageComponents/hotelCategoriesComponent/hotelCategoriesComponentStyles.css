@@ -1,13 +1,101 @@
-.hotelsCategories, h2{
+.hotelsCategories,
+h2 {
     color: rgb(0, 0, 0);
     font-size: 30px;
     position: relative;
     margin-left: 15px;
     top: 5px;
 }
-.hotelsCategories{
+
+.hotelsCategories {
     background-color: rgb(224, 239, 253);
     margin: 0;
     width: 100%;
-    height: 50vh;
+    height: 70vh;
+}
+
+.hotelCategoriesContainer{
+    background-color: rgb(224, 239, 253);
+    margin: 0;
+    width: 100%;
+    height: 70vh;
+}
+
+.hotelCategory {
+    display: inline-block;
+    width: 20.55%;
+    height: 75%;
+    margin: 15px 30px;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s all ease;
+}
+
+.hotelCategory:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.hotelCategory img {
+    width: 100%;
+    height: 60%;
+    border-radius: 10px 10px 0 0;
+}
+
+.hotelCategory h3 {
+    margin: 0;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(0, 0, 0);
+}
+
+@media (max-width: 1115px) {
+    .hotelsCategories{
+        height: 100%;
+    }
+    .hotelCategoriesContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        height: 100%;
+    }
+    .hotelCategory {
+        width: 95%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hotelsCategories{
+        height: 100%;
+    }
+    .hotelCategoriesContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        height: 100%;
+    }
+    .hotelCategory {
+        width: 95%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hotelsCategories{
+        height: 100%;
+    }
+    .hotelCategoriesContainer{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+        height: 100%;
+    }
 }

@@ -27,3 +27,44 @@
     width: 10%;
     padding: 5px;
 }
+
+@media (max-width: 768px) {
+    .searchZone{
+        height: 100%;
+    }
+    .searchInputHome{
+        width: 80%;
+        height: 10%;
+        margin: 5px 5px;
+        font-size: 15px;
+    }
+    .sendSearchButton{
+        width: 60%;
+        padding: 5px;
+        margin-bottom: 25px;
+    }
+    .searchZone h1{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .searchZone{
+        height: 100%;
+    }
+    .searchInputHome{
+        width: 90%;
+        height: 10%;
+        margin: 5px 5px;
+        font-size: 15px;
+    }
+    .sendSearchButton{
+        width: 60%;
+        padding: 5px;
+        margin-bottom: 25px;
+    }
+    .searchZone h1{
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+}

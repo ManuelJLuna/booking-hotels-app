@@ -1,72 +1,71 @@
-import "./hotelPageStyles.css"
-
-const hotelpreviw = { // Hotel hardcodeado TODO: Eliminar cuando se tenga la pagina completa
-    hotelName: "Pedro Alcachofa",
-    pricePerNight: 50,
-    hotelType: "Hotel",
-    hotelAddress: "Av Santa Fe 1234",
-    hotelCity: "Buenos Aires",
-    hotelCountry: "Argentina",
-    hotelPhone: 123456789,
-    hotelEmail: "palcachofa@gmail.com",
-    hotelWebsite: "https://www.palcachofa.com",
-    hotelDescription: "Muy buen hotel, con buena comida y buen servicio",
-    wifi: true,
-    parking: true,
-    pool: true,
-    gym: true,
-    restaurant: true,
-    spa: true,
-    bar: true,
-    laundry: true,
-    roomService: true,
-    conferenceRoom: true,
-    photos: "src/assets/icon.png",
-}
+import { useParams } from "react-router";
+import "./hotelPageStyles.css";
+import { useEffect, useState } from "react";
 
 export const HotelPage = () => {
+    const URL_BASE = "http://localhost:8080/hotel";
+    const { id } = useParams();
+    const [hotelPreview, setHotelPreview] = useState(null);
+
+    useEffect(() => {
+        const fetchHotel = async () => {
+            try {
+                const response = await fetch(`${URL_BASE}/${id}`);
+                if (!response.ok) {
+                    throw new Error('Error fetching hotel data');
+                }
+                const data = await response.json();
+                setHotelPreview(data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        fetchHotel();
+    }, [id]);
+
+    if (!hotelPreview) return <p>Cargando hotel...</p>;
+
     return (
         <div className="hotelPage">
             <div className="HotelPageAllInfoContainer">
                 <div className="hotelPageContainerImage">
-                    <img src={hotelpreviw.photos} alt={hotelpreviw.hotelName} />
+                    <img src={hotelPreview.photos} alt={hotelPreview.hotelName} />
                 </div>
                 <div className="hotelPageContainerGeneralInfo">
                     <div className="HotelPageGeneralInfoHeader">
-                    <h1>{hotelpreviw.hotelName}</h1>
-                    <p>{hotelpreviw.hotelDescription}</p>
+                        <h1>{hotelPreview.hotelName}</h1>
+                        <p>{hotelPreview.hotelDescription}</p>
                     </div>
                     <div className="HotelPageGeneralInfo">
-                    <h2>Información del {hotelpreviw.hotelType}</h2>
-                    <p>Dirección<i class='bx bx-map'/>:  {hotelpreviw.hotelAddress}</p>
-                    <p>Ciudad: {hotelpreviw.hotelCity}</p>
-                    <p>País: {hotelpreviw.hotelCountry}</p>
-                    <p>Teléfono<i class='bx bxs-phone' />: {hotelpreviw.hotelPhone}</p>
-                    <p>Email<i class='bx bxs-envelope' />: {hotelpreviw.hotelEmail}</p>
-                    <p>Sitio web: <a href={hotelpreviw.hotelWebsite}>{hotelpreviw.hotelWebsite}</a></p>
-                    <p>Precio por noche<i class='bx bxs-purchase-tag' />: ${hotelpreviw.pricePerNight}</p>
+                        <h2>Información del {hotelPreview.hotelType}</h2>
+                        <p><i className='bx bx-map' /> Dirección: {hotelPreview.hotelAddress}</p>
+                        <p>Ciudad: {hotelPreview.hotelCity}</p>
+                        <p>País: {hotelPreview.hotelCountry}</p>
+                        <p><i className='bx bxs-phone' /> Teléfono: {hotelPreview.hotelPhone}</p>
+                        <p><i className='bx bxs-envelope' /> Email: {hotelPreview.hotelEmail}</p>
+                        <p>Sitio web: <a href={hotelPreview.hotelWebsite} target="_blank">{hotelPreview.hotelWebsite}</a></p>
+                        <p><i className='bx bxs-purchase-tag' /> Precio por noche: ${hotelPreview.pricePerNight}</p>
                     </div>
                     <button className="bookHotelButton">Reservar</button>
                 </div>
+            </div>
 
-                </div>
-                <div className="hotelPageContainerServices">
-                    <h2>Servicios disponibles</h2>
-                    <div>
-                        <ul className="hotelPageContainerServicesList">
-                            {hotelpreviw.wifi && <li> <i class='bx bx-wifi' />Wifi</li>}
-                            {hotelpreviw.parking && <li> <i class='bx bxs-car' />Estacionamiento</li>}
-                            {hotelpreviw.pool && <li> <i class='bx bx-swim' />Piscina</li>}
-                            {hotelpreviw.gym && <li> <i class='bx bx-dumbbell' />Gimnasio</li>}
-                            {hotelpreviw.restaurant && <li> <i class='bx bxs-food-menu' />Restaurante</li>}
-                            {hotelpreviw.spa && <li> <i class='bx bxs-spa' />Spa</li>}
-                            {hotelpreviw.bar && <li> <i class='bx bxs-beer' />Bar</li>}
-                            {hotelpreviw.laundry && <li> <i class='bx bxs-washer' />Lavandería</li>}
-                            {hotelpreviw.roomService && <li> <i class='bx bxs-bed' />Servicio a la habitación</li>}
-                            {hotelpreviw.conferenceRoom && <li> <i class='bx bxs-microphone' />Sala de conferencias</li>}
-                        </ul>
-                        </div>
+            <div className="hotelPageContainerServices">
+                <h2>Servicios disponibles</h2>
+                <ul className="hotelPageContainerServicesList">
+                    {hotelPreview.wifi && <li><i className='bx bx-wifi' /> Wifi</li>}
+                    {hotelPreview.parking && <li><i className='bx bxs-car' /> Estacionamiento</li>}
+                    {hotelPreview.pool && <li><i className='bx bx-swim' /> Piscina</li>}
+                    {hotelPreview.gym && <li><i className='bx bx-dumbbell' /> Gimnasio</li>}
+                    {hotelPreview.restaurant && <li><i className='bx bxs-food-menu' /> Restaurante</li>}
+                    {hotelPreview.spa && <li><i className='bx bxs-spa' /> Spa</li>}
+                    {hotelPreview.bar && <li><i className='bx bxs-beer' /> Bar</li>}
+                    {hotelPreview.laundry && <li><i className='bx bxs-washer' /> Lavandería</li>}
+                    {hotelPreview.roomService && <li><i className='bx bxs-bed' /> Servicio a la habitación</li>}
+                    {hotelPreview.conferenceRoom && <li><i className='bx bxs-microphone' /> Sala de conferencias</li>}
+                </ul>
             </div>
         </div>
-    )
-}
+    );
+};
