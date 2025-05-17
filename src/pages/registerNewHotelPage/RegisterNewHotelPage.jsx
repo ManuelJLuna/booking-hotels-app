@@ -20,28 +20,53 @@ export const RegisterNewHotelPage = () => {
 
     const handleChange = (e) => {
         const { name, value, type, checked, files } = e.target;
+
         if (type === 'checkbox') {
             setForm((prev) => ({
                 ...prev,
                 services: checked
                     ? [...prev.services, value]
-                    : prev.services.filter((s) => s !== value)
+                    : prev.services.filter((s) => s !== value),
             }));
         } else if (type === 'file') {
             setForm((prev) => ({
                 ...prev,
-                photos: Array.from(files)
+                photos: [...prev.photos, ...Array.from(files)],
             }));
         } else {
             setForm((prev) => ({
                 ...prev,
-                [name]: value
+                [name]: value,
             }));
         }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        let imageUrl = "";
+
+        if (form.photos.length > 0) {
+            for (let i = 0; i < form.photos.length; i++) {
+                const imageFormData = new FormData();
+                imageFormData.append("file", form.photos[i]);
+
+                try {
+                    const response = await fetch("http://localhost:8080/hotel/upload", {
+                        method: "POST",
+                        body: imageFormData,
+                    });
+                    if (response.ok) {
+                        imageUrl = await response.text();
+                    } else {
+                        console.error("Error al subir la imagen");
+                    }
+                } catch (error) {
+                    console.error("Excepción al subir la imagen:", error);
+                }
+            }
+        }
+
         const hotel = {
             hotelName: form.hotelName,
             hotelAddress: form.hotelAddress,
@@ -51,7 +76,7 @@ export const RegisterNewHotelPage = () => {
             hotelEmail: form.hotelEmail,
             hotelWebsite: form.hotelWebsite,
             hotelDescription: form.hotelDescription,
-            pricePerNight: form.pricePerNight,
+            pricePerNight: parseFloat(form.pricePerNight),
             hotelType: form.hotelType,
             wifi: form.services.includes("wifi"),
             parking: form.services.includes("parking"),
@@ -63,10 +88,11 @@ export const RegisterNewHotelPage = () => {
             laundry: form.services.includes("laundry"),
             roomService: form.services.includes("roomService"),
             conferenceRoom: form.services.includes("conferenceRoom"),
-            photos: "https://via.placeholder.com/150" // o como lo estés manejando
+            photos: []
         };
 
         await addHotel(hotel);
+
         setForm({
             hotelName: '',
             hotelAddress: '',
@@ -76,6 +102,8 @@ export const RegisterNewHotelPage = () => {
             hotelEmail: '',
             hotelWebsite: '',
             hotelDescription: '',
+            pricePerNight: '',
+            hotelType: '',
             services: [],
             photos: []
         });
@@ -98,8 +126,8 @@ export const RegisterNewHotelPage = () => {
                 <input className='registerNewHotelInput' type="text" name="hotelCountry" id="hotelCountry" value={form.hotelCountry} onChange={handleChange} />
 
                 <label htmlFor="hotelWebsite">Precio por noche</label>
-                <input className='registerNewHotelInput' type="number" name="pricePerNight" id="pricePerNight" value={form.pricePerNight} onChange={handleChange} />
-                
+                <input className='registerNewHotelInput' type="number" name="pricePerNight" id="pricePerNight" value={form.pricePerNight} onChange={handleChange} min={1} />
+
                 <label htmlFor="hotelWebsite">Tipo de hotel</label>
                 <select className='registerNewHotelInputSelect' name="hotelType" id="hotelType" value={form.hotelType} onChange={handleChange} placeholder='Eliga una opcion'>
                     <option className='registerNewHotelInputSelectOption' value={null} disabled selected>Eliga una opcion</option>
@@ -117,7 +145,7 @@ export const RegisterNewHotelPage = () => {
 
                 <label htmlFor="hotelWebsite">Página Web</label>
                 <input className='registerNewHotelInput' type="url" name="hotelWebsite" id="hotelWebsite" value={form.hotelWebsite} onChange={handleChange} />
-                
+
 
                 <label htmlFor="hotelDescription">Descripción</label>
                 <textarea name="hotelDescription" id="hotelDescription" cols="30" rows="10" maxLength={516} value={form.hotelDescription} onChange={handleChange}></textarea>

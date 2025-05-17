@@ -30,7 +30,7 @@ export const HotelPage = () => {
         <div className="hotelPage">
             <div className="HotelPageAllInfoContainer">
                 <div className="hotelPageContainerImage">
-                    <img src={hotelPreview.photos} alt={hotelPreview.hotelName} />
+                    <img src={`http://localhost:8080${hotelPreview.photos[0]}`} alt={hotelPreview.hotelName} />
                 </div>
                 <div className="hotelPageContainerGeneralInfo">
                     <div className="HotelPageGeneralInfoHeader">

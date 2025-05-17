@@ -24,7 +24,7 @@
 }
 
 .cardHotelImage {
-    width: 35%;
+    width: 30%;
     height: 100%;
     object-fit: cover;
 }
@@ -33,6 +33,7 @@
     width: 65%;
     padding: 20px;
     display: grid;
+    text-align: center;
     grid-template-rows: auto 1fr auto;
     height: 100%;
 }
