@@ -13,13 +13,26 @@
 .HotelPageAllInfoContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    margin-bottom: 60px;
 }
 .hotelPageContainerImage img{
     position: relative;
-    width: 75%;
-    height: 75%;
+    width: 100%;
+    height: 100%;
     margin: 0;
     object-fit: cover;
+}
+.hotelPageContainerImageButtons{
+    position: relative;
+    margin: 0 35%;
+}
+.hotelPageContainerImageButtons button{
+    display: inline-block;
+    margin: auto 0 0 0;
+    border: none;
+    font-size: 30px;
+    background-color: transparent;
+    text-align: center;
 }
 .hotelPageContainerImage{
     display: flex;
@@ -31,7 +44,7 @@
     width: 90%;
     height: 100%;
     border-radius: 10px;
-    border: rgba(206, 239, 243, 0.3) solid 3px;
+    border: non;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease, transform 0.7s ease;
 }

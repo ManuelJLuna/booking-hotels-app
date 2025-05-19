@@ -7,7 +7,7 @@ export const NavBarComponent = () => {
     <>
       <nav className="navbar">
         <div className="container-fluid">
-          <div className="navbar-brand"><NavLink id='logo' to='/'><img src="../src/assets/icon.png" alt="" /></NavLink><p className='lema'>Lema de la empresa</p></div>
+          <div className="navbar-brand"><NavLink id='logo' to='/'><img src="../src/assets/icon.png" alt="" /><p className='lema'>Lema de la empresa</p></NavLink></div>
           <div className="d-flex" role="search">
             <div className='collapsable'>
               <button className="btn callToActionButton" type="submit">Iniciar sesion</button>

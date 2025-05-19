@@ -6,6 +6,7 @@ export const HotelPage = () => {
     const URL_BASE = "http://localhost:8080/hotel";
     const { id } = useParams();
     const [hotelPreview, setHotelPreview] = useState(null);
+    const [hotelImageId, setHotelImageId] = useState(0);
 
     useEffect(() => {
         const fetchHotel = async () => {
@@ -24,13 +25,35 @@ export const HotelPage = () => {
         fetchHotel();
     }, [id]);
 
+    const nextImage = () => {
+        if (hotelImageId < hotelPreview.photos.length - 1) {
+            setHotelImageId(hotelImageId + 1);
+        } else {
+            setHotelImageId(0);
+        }
+    };
+
+    const previousImage = () => {  
+        if (hotelImageId > 0) {
+            setHotelImageId(hotelImageId - 1);
+        } else {
+            setHotelImageId(hotelPreview.photos.length - 1);
+        }
+    };
+
     if (!hotelPreview) return <p>Cargando hotel...</p>;
 
     return (
         <div className="hotelPage">
             <div className="HotelPageAllInfoContainer">
-                <div className="hotelPageContainerImage">
-                    <img src={`http://localhost:8080${hotelPreview.photos[0]}`} alt={hotelPreview.hotelName} />
+                <div className="hotelPageImageAndImageButtons">
+                    <div className="hotelPageContainerImage">
+                        <img src={`http://localhost:8080${hotelPreview.photos[hotelImageId]}`} alt={hotelPreview.hotelName} />
+                    </div>
+                    <div className="hotelPageContainerImageButtons">
+                    <button onClick={previousImage}><i className='bx bxs-left-arrow' /></button>
+                    <button onClick={nextImage}><i className='bx bxs-right-arrow' /></button>
+                    </div>
                 </div>
                 <div className="hotelPageContainerGeneralInfo">
                     <div className="HotelPageGeneralInfoHeader">
