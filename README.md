@@ -37,7 +37,7 @@ There you'll have access to the following features:
 
 1. **Clone the repository:**
     ```bash
-    git clone git clone https://github.com/ManuelJLuna/booking-hotels-app
+    git clone https://github.com/ManuelJLuna/booking-hotels-app
     ```
 2. **Navigate to the project directory:**
     ```bash
