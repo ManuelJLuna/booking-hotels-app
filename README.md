@@ -1,12 +1,71 @@
-# React + Vite
+# Hotel Booking Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to Use It
 
-Currently, two official plugins are available:
+It's a very simple page, easy to use.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Main Page
 
-## Expanding the ESLint configuration
+On the main page, you will find a list of available hotels. You can:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Browse hotels:** Scroll through the list to view hotel names, images, and brief descriptions.
+- **Search hotels:** Use the search bar to filter hotels by name or location.
+- **View hotel details:** Click on a hotel to see more information, including amenities, room types, and prices.
+- **Book a room:** Select your desired room and click the "Book Now" button. You will be prompted to enter your booking details (name, dates, number of guests, etc.).
+- **Confirm booking:** Review your booking information and confirm your reservation. You will receive a confirmation message.
+
+### Register Hotels Page
+
+To access it, visit [http://localhost:5173/register/hotel](http://localhost:5173/register/hotel).  
+Fill out the form with the hotel's information. Then go back to the main page, and your hotel will appear there.
+
+### Admin Controls
+
+To access it, visit [http://localhost:5173/admin](http://localhost:5173/admin).  
+There you'll have access to the following features:
+
+- **List all hotels:** The page will show you all the hotels with their names and IDs.
+- **Delete hotels:** The page will also show you a delete button, which will ask for confirmation. If you accept, the hotel will be deleted permanently. Be careful when using the delete button.
+
+### Additional Features
+
+- **Responsive design:** The page works well on both desktop and mobile devices.
+- **User-friendly interface:** Navigation is intuitive and straightforward.
+- **Secure booking:** Your booking information is handled securely.
+
+### Getting Started
+
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/hotel-booking-page.git
+    ```
+2. **Navigate to the project directory:**
+    ```bash
+    cd hotel-booking-page
+    ```
+3. **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4. **Start the development server:**
+    ```bash
+    npm start
+    ```
+5. **Open your browser and visit:**
+    ```
+    http://localhost:5173
+    ```
+6. **Backend available at:**
+    ```
+    https://github.com/ManuelJLuna/booking-hotels-app-backend.git
+    ```
+
+### Technologies Used
+
+- React
+- CSS/SCSS
+- Node.js
+
+### Contributing
+
+Feel free to open issues or submit pull requests to improve the project.
