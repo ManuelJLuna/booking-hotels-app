@@ -18,6 +18,7 @@ export const ListOfHotelsPage = () => {
 
 
     return (
+        <>
         <table className="table table-striped">
             <thead>
                 <tr>
@@ -40,5 +41,7 @@ export const ListOfHotelsPage = () => {
                 ))}
             </tbody>
         </table>
+        <p className='adminErrorAccess'>Esta pagina solo esta disponible en PC</p>
+        </>
     )
 }

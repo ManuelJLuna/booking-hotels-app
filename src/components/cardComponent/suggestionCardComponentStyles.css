@@ -57,6 +57,7 @@
 
 .cardContent .description {
     align-self: center;
+    margin-left: 15%;
 }
 
 .cardContent .price {
@@ -64,4 +65,150 @@
     font-size: 1.2rem;
     color: #008f5f;
     align-self: end;
+}
+.cardComponent,
+.cardComponent * {
+    all: unset;
+    box-sizing: border-box;
+}
+
+.cardComponent {
+    width: 90%;
+    max-width: 800px;
+    height: 200px;
+    margin: 30px auto;
+    background-color: rgb(251, 252, 254);
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+.cardComponent:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.cardHotelImage {
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardContent {
+    width: 65%;
+    padding: 20px;
+    display: grid;
+    text-align: center;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+}
+
+.cardContent h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: start;
+}
+
+.cardHotelName {
+    margin: 10px 0;
+    color: #333;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cardContent .description {
+    align-self: center;
+    margin-left: 15%;
+}
+
+.cardContent .price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #008f5f;
+    align-self: end;
+}
+
+@media (max-width: 768px) {
+  .cardComponent {
+    display: grid;
+    grid-template-rows: 132px auto; /* Imagen y contenido */
+    width: 90%;
+    max-width: 800px;
+    height: 250px;
+    margin: 20px auto;
+    background-color: rgb(251, 252, 254);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+  }
+
+  .cardHotelImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-row: 1 / 2;
+  }
+
+  .cardContent {
+    grid-row: 2 / 3;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+    background-color: white;
+    width: 100%;
+  }
+
+  .cardContent h3 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #333;
+  }
+
+  .cardHotelName {
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+  }
+
+  .cardContent .description {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .cardContent .price {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #008f5f;
+  }
+}
+
+@media (max-width: 568px) {
+  .cardContent {
+    padding: 12px;
+    gap: 6px;
+  }
+
+  .cardContent h3 {
+    font-size: 1.15rem;
+  }
+
+  .cardHotelName {
+    font-size: 0.95rem;
+  }
+
+  .cardContent .description {
+    font-size: 0.95rem;
+  }
+
+  .cardContent .price {
+    font-size: 1rem;
+  }
 }

@@ -47,3 +47,20 @@ main {
 .footerContainer .social-media li:hover {
     transform: scale(1.2);
 }
+
+@media (max-width: 768px) {
+    .footerContainer {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .footerContainer .companyAllRightsReserved {
+        margin-bottom: 10px;
+    }
+
+    .footerContainer .social-media {
+        gap: 10px;
+        text-align: center;
+    }
+}

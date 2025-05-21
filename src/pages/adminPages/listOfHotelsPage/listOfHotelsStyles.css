@@ -8,3 +8,15 @@ table{
 table th, table td{
     padding-bottom: 13vh;
 }
+.adminErrorAccess{
+    display: none;
+}
+@media (max-width: 768px) {
+    .table{
+        display: none
+    }
+    .adminErrorAccess{
+        font-size: 3em;
+        display: block;
+    }
+}

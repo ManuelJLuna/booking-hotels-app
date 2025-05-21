@@ -14,14 +14,12 @@ export const HotelSuggestionsComponent = () => {
         if (hotels.length > (pageNumber * 10 +1)) {
             setPageNumber(pageNumber + 1);
         }
-        console.log(pageNumber);
     }
 
     const handlePrev = () => {
         if (pageNumber > 1) {
             setPageNumber(pageNumber - 1);
         }
-        console.log(pageNumber);
     };
 
 
