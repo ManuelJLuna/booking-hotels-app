@@ -142,3 +142,20 @@
     border: rgb(229, 242, 252) 1px inset;
     cursor: pointer;
 }
+a{
+    text-decoration: none;
+    color: #333;
+}
+.backArrow{
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    top: -15px;
+    transition: all 0.5s ease;
+}
+.backArrow:hover{
+    transform: scale(1.3);
+}

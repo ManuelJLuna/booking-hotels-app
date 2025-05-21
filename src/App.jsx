@@ -6,6 +6,9 @@ import { HotelCountryCitySuggestionsPage } from "./pages/hotelCountryCitySuggest
 import { HotelPage } from "./pages/hotelPage/HotelPage"
 import { RegisterNewHotelPage } from "./pages/registerNewHotelPage/RegisterNewHotelPage"
 import { BrowserRouter, Routes, Route } from "react-router"
+import { FooterComponent } from "./components/footerComponent/FooterComponent"
+import { AdminPage } from "./pages/adminPages/adminPage/AdminPage"
+import { ListOfHotelsPage } from "./pages/adminPages/listOfHotelsPage/ListOfHotelsPage"
 
 export const App = () => {
   return (
@@ -18,7 +21,10 @@ export const App = () => {
           <Route path="/register/hotel/*" element={<RegisterNewHotelPage />} />
           <Route path="/hotel/:id/*" element={<HotelPage />} />
           <Route path="/hotel/countrycity/:citycountry/*" element={< HotelCountryCitySuggestionsPage />} />
+          <Route path="admin/*" element={<AdminPage/>} />
+          <Route path="admin/hotel/list" element={<ListOfHotelsPage />} />
         </Routes>
+        <FooterComponent />
       </HotelProvider>
     </BrowserRouter>
   )

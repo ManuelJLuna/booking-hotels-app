@@ -1,0 +1,49 @@
+.pageContainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.footerContainer {
+    background-color: rgba(206, 239, 243, 0.98);
+    height: 8vh;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.footerContainer .companyAllRightsReserved {
+    position: relative;
+    top: 15%;
+    right: 10%;
+    font-size: 1.2rem;
+}
+
+.footerContainer .social-media {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    top: 15%;
+}
+
+.footerContainer .social-media li {
+    display: inline-block;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+.footerContainer .social-media li:hover {
+    transform: scale(1.2);
+}

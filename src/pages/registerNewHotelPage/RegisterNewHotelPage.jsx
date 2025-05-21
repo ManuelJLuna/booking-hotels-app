@@ -44,26 +44,27 @@ export const RegisterNewHotelPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        let imageUrl = "";
+        let imageUrls = [];
 
         if (form.photos.length > 0) {
-            for (let i = 0; i < form.photos.length; i++) {
-                const imageFormData = new FormData();
-                imageFormData.append("file", form.photos[i]);
+            const imageFormData = new FormData();
+            form.photos.forEach((photo) => {
+                imageFormData.append("files", photo);
+            });
 
-                try {
-                    const response = await fetch("http://localhost:8080/hotel/upload", {
-                        method: "POST",
-                        body: imageFormData,
-                    });
-                    if (response.ok) {
-                        imageUrl = await response.text();
-                    } else {
-                        console.error("Error al subir la imagen");
-                    }
-                } catch (error) {
-                    console.error("Excepción al subir la imagen:", error);
+            try {
+                const response = await fetch("http://localhost:8080/hotel/upload", {
+                    method: "POST",
+                    body: imageFormData,
+                });
+
+                if (response.ok) {
+                    imageUrls = await response.json();
+                } else {
+                    console.error("Error al subir las imágenes:", await response.text());
                 }
+            } catch (error) {
+                console.error("Excepción al subir imágenes:", error);
             }
         }
 
@@ -88,7 +89,7 @@ export const RegisterNewHotelPage = () => {
             laundry: form.services.includes("laundry"),
             roomService: form.services.includes("roomService"),
             conferenceRoom: form.services.includes("conferenceRoom"),
-            photos: []
+            photos: imageUrls
         };
 
         await addHotel(hotel);
@@ -108,6 +109,7 @@ export const RegisterNewHotelPage = () => {
             photos: []
         });
     };
+
 
     return (
         <div className="registerNewHotelPage">
@@ -183,7 +185,7 @@ export const RegisterNewHotelPage = () => {
                 </div>
 
                 <label>Fotos:</label>
-                <input className='registerNewHotelInput' type="file" multiple onChange={handleChange} />
+                <input className='registerNewHotelInput' name="photos" type="file" multiple onChange={handleChange} />
 
                 <button type="submit" className="submitButton">Registrar Hotel</button>
             </form>

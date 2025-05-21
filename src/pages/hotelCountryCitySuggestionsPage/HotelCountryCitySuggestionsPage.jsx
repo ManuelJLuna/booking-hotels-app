@@ -44,6 +44,7 @@ export const HotelCountryCitySuggestionsPage = () => {
           {hotels.map((hotel) => (
             <CardComponent
               hotel={hotel}
+              key={hotel.id}
             />
           ))}
         </div>

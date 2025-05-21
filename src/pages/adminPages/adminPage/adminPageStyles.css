@@ -1,0 +1,19 @@
+button{
+    display: block;
+    margin: 10px 0;
+}
+.adminErrorAccess{
+    color: red;
+    font-size: 3em;
+    margin: 10px 0;
+    display: none;
+}
+@media (max-width: 768px) {
+    .adminPage{
+        display: none
+    }
+    .adminErrorAccess{
+        font-size: 3em;
+        display: block;
+    }
+}

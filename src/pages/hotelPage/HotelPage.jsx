@@ -45,6 +45,7 @@ export const HotelPage = () => {
 
     return (
         <div className="hotelPage">
+            <button className="backArrow" onClick={() => history.back()} ><i className='bx bx-arrow-back'/></button>
             <div className="HotelPageAllInfoContainer">
                 <div className="hotelPageImageAndImageButtons">
                     <div className="hotelPageContainerImage">
@@ -66,7 +67,7 @@ export const HotelPage = () => {
                         <p>Ciudad: {hotelPreview.hotelCity}</p>
                         <p>País: {hotelPreview.hotelCountry}</p>
                         <p><i className='bx bxs-phone' /> Teléfono: {hotelPreview.hotelPhone}</p>
-                        <p><i className='bx bxs-envelope' /> Email: {hotelPreview.hotelEmail}</p>
+                        <a href={`mailto:${hotelPreview.hotelEmail}`}><i className='bx bxs-envelope' /> Email: {hotelPreview.hotelEmail}</a>
                         <p>Sitio web: <a href={hotelPreview.hotelWebsite} target="_blank">{hotelPreview.hotelWebsite}</a></p>
                         <p><i className='bx bxs-purchase-tag' /> Precio por noche: ${hotelPreview.pricePerNight}</p>
                     </div>
