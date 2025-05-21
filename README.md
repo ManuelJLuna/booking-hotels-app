@@ -57,7 +57,7 @@ There you'll have access to the following features:
     ```
 6. **Backend available at:**
     ```
-    https://github.com/ManuelJLuna/booking-hotels-app-backend.git
+    https://github.com/ManuelJLuna/booking-hotels-app-backend
     ```
 
 ### Technologies Used
