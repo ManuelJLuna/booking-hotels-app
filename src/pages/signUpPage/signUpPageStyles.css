@@ -1,0 +1,73 @@
+.signUpPageContainer{
+    text-align: center;
+    width: 65%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(162, 232, 241, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(110, 193, 199, 0.5);
+}
+
+.signupUserInput {
+    margin: 10px auto;
+    display: block;
+    display: inline-block;
+    width: 80%;
+    height: 35px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+}
+
+.signUpPageContainer label {
+    display: block;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.signUpPageContainer .submitButton {
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    height: 35px;
+    font-size: 20px;
+    padding: 0;
+    border-radius: 10px;
+    border: 1.5px outset rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+    transition: all 0.3s ease;
+}
+
+.signUpPageContainer .submitButton:hover {
+    background-color: rgb(162, 232, 241);
+    border: 1.5px inset rgb(162, 232, 241);
+    cursor: pointer;
+}
+
+.signUpPageContainer .error {
+    display: none;
+    color: red;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.signUpPageContainer .errorShow {
+    display: inline-block;
+}
+
+.signUpPageContainer .showPassword {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 566px){
+    .signUpPageContainer .submitButton {
+    height: 35px;
+    width: 80%;
+}
+}

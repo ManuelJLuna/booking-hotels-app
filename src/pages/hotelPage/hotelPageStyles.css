@@ -73,7 +73,7 @@
     color: #333;
     text-align: left;
 }
-.HotelPageGeneralInfo p{
+.HotelPageGeneralInfo p, .HotelPageGeneralInfo a{
     font-size: 1.2rem;
     margin: 0;
     padding: 0;
@@ -158,4 +158,77 @@ a{
 }
 .backArrow:hover{
     transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+    .hotelPageContainerImageButtons{
+        text-align: center;
+        width: 100%;
+        margin: auto;
+    }
+    .hotelPageContainerImage{
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .HotelPageAllInfoContainer{
+        grid-template-columns: 1fr;
+    }
+    .hotelPageContainerGeneralInfo{
+        margin: 8% auto 0 auto;
+        text-align: center;
+    }
+    .HotelPageGeneralInfo p, .HotelPageGeneralInfo a, .HotelPageGeneralInfo h2{
+        text-align: center;
+    }
+    .bookHotelButton{
+        margin: 3% auto;
+        width: 80%;
+        float: none;
+    }
+    .hotelPageContainerServicesList{
+        display: block;
+        margin: 0 0 0 30px;
+    }
+    .hotelPageContainerServicesList li{
+        font-size: 1.39rem;
+        margin: 0 0 0 0;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .hotelPageContainerImageButtons button{
+        text-align: center;
+        font-size: 35px;
+    }
+    .hotelPageContainerImage{
+        margin: 0;
+        width: 100%;
+        height: 75%;
+    }
+    .HotelPageAllInfoContainer{
+        grid-template-columns: 1fr;
+    }
+    .hotelPageContainerGeneralInfo{
+        margin: 8% auto 0 auto;
+        text-align: center;
+    }
+    .HotelPageGeneralInfo p, .HotelPageGeneralInfo a, .HotelPageGeneralInfo h2{
+        text-align: center;
+    }
+    .bookHotelButton{
+        margin: 3% auto;
+        width: 80%;
+        float: none;
+    }
+    .hotelPageContainerServicesList{
+        margin: 0 0 0 10px;
+    }
+    .hotelPageContainerServicesList li{
+        font-size: 1.39rem;
+        display: block;
+        margin: 0;
+    }
+
 }

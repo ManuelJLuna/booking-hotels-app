@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 export const SearchZoneComponent = () => {
 
+    // Uses a state to manage the destination input
+    // The destination is used to filter the hotels by country and city
     const [destination, setDestination] = useState('');
 
 

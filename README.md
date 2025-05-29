@@ -4,6 +4,8 @@
 
 It's a very simple page, easy to use.
 
+---
+
 ### Main Page
 
 On the main page, you will find a list of available hotels. You can:
@@ -14,18 +16,29 @@ On the main page, you will find a list of available hotels. You can:
 - **Book a room:** Select your desired room and click the "Book Now" button. You will be prompted to enter your booking details (name, dates, number of guests, etc.).
 - **Confirm booking:** Review your booking information and confirm your reservation. You will receive a confirmation message.
 
+---
+
 ### Register Hotels Page
 
 To access it, visit [http://localhost:5173/register/hotel](http://localhost:5173/register/hotel).  
 Fill out the form with the hotel's information. Then go back to the main page, and your hotel will appear there.
 
+---
+
 ### Admin Controls
 
-To access it, visit [http://localhost:5173/admin](http://localhost:5173/admin).  
+To access it login in with the mail `admin@gmail.com` and password `admin`
+Visit [http://localhost:5173/admin](http://localhost:5173/admin).  
 There you'll have access to the following features:
 
 - **List all hotels:** The page will show you all the hotels with their names and IDs.
-- **Delete hotels:** The page will also show you a delete button, which will ask for confirmation. If you accept, the hotel will be deleted permanently. Be careful when using the delete button.
+    - **Delete hotels:** The page will also show you a delete button, which will ask for confirmation. If you accept, the hotel will be deleted permanently. Be careful when using the delete button.
+    - **Edit hotels:** The page will show a button that will let you edit a hotel via form
+- **List all users:** The page will show you all the users with their names and IDs.
+    - **Delete users:** The page will also show you a delete button, which will ask for confirmation. If you accept, the user will be deleted permanently. Be careful when using the delete button.
+    - **Give admin role to users:** The page will show a button that will let you give an user admin permissions
+
+---
 
 ### Additional Features
 

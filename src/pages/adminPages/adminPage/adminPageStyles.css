@@ -8,6 +8,11 @@ button{
     margin: 10px 0;
     display: none;
 }
+.adminErrorAccessAcount{
+    color: red;
+    font-size: 3em;
+    margin: 10px 0;
+}
 @media (max-width: 768px) {
     .adminPage{
         display: none

@@ -1,12 +1,18 @@
+import { UserContext } from '../userContext/UserContext'
 import { HotelContext } from './HotelContext'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 export const HotelProvider = ({ children }) => {
 
+  const userContext = useContext(UserContext)
+  const logedUser = userContext ? userContext.logedUser : null
   const [hotels, setHotels] = useState([])
+  const [reservedHotels, setReservedHotels] = useState(logedUser ? logedUser.reservedHotels : [])
 
+  // API URL
   const URL_BASE = 'http://localhost:8080/hotel'
 
+  // Gets all hotels
   const fetchHotelsData = async () => {
     try {
       const r = await fetch(URL_BASE)
@@ -14,10 +20,12 @@ export const HotelProvider = ({ children }) => {
       setHotels(data)
     } catch (err) {
       console.error(err)
-      return console.error('Ha ocurrido un error al llamar a la API. HotelProvider.jsx')
+      return console.error('Ha ocurrido un error al llamar a la API.')
     }
   }
 
+  // Adds a hotel
+  // Check API documentation for the correct format of the hotel JSON object
   const addHotel = async (hotel) => {
     try {
       const r = await fetch(URL_BASE, {
@@ -33,6 +41,7 @@ export const HotelProvider = ({ children }) => {
     }
   }
 
+  // Deletes a hotel by its id
   const deleteHotel = async (id) => {
     try {
       const r = await fetch(`${URL_BASE}/${id}`, {
@@ -46,9 +55,10 @@ export const HotelProvider = ({ children }) => {
     }
   }
 
-  const updateHotel = async (id, updatedHotel) => {
+  // Updates a hotel
+  const updateHotel = async (updatedHotel) => {
     try {
-      const r = await fetch(`${URL_BASE}/${id}`, {
+      const r = await fetch(`${URL_BASE}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updatedHotel),
@@ -66,7 +76,7 @@ export const HotelProvider = ({ children }) => {
   }, [])
 
   return (
-    <HotelContext.Provider value={{ hotels, addHotel, deleteHotel, updateHotel }}>
+    <HotelContext.Provider value={{ hotels, addHotel, deleteHotel, updateHotel, reservedHotels, setReservedHotels }}>
       {children}
     </HotelContext.Provider>
   )
