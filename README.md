@@ -27,8 +27,12 @@ Fill out the form with the hotel's information. Then go back to the main page, a
 
 ### Admin Controls
 
+<<<<<<< HEAD
 To access it login in with the mail `admin@gmail.com` and password `admin`
 Visit [http://localhost:5173/admin](http://localhost:5173/admin).  
+=======
+To access it, visit [http://localhost:5173/admin](http://localhost:5173/admin). 
+>>>>>>> 54f34db0cef5dccf685321c4e4d9b45de8b7587c
 There you'll have access to the following features:
 
 - **List all hotels:** The page will show you all the hotels with their names and IDs.
@@ -50,11 +54,11 @@ There you'll have access to the following features:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/hotel-booking-page.git
+    git clone https://github.com/ManuelJLuna/booking-hotels-app
     ```
 2. **Navigate to the project directory:**
     ```bash
-    cd hotel-booking-page
+    cd booking-hotels-app
     ```
 3. **Install dependencies:**
     ```bash
