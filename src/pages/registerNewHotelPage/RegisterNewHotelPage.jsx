@@ -15,6 +15,7 @@ export const RegisterNewHotelPage = () => {
     const [form, setForm] = useState({
         hotelName: '',
         hotelAddress: '',
+        hotelCapacity: '',
         hotelCity: '',
         hotelCountry: '',
         hotelPhone: '',
@@ -140,6 +141,7 @@ export const RegisterNewHotelPage = () => {
         const hotel = { // It creates a hotel object model to send to the server with all the data
             hotelName: form.hotelName.trim(),
             hotelAddress: form.hotelAddress.trim(),
+            hotelCapacity: parseInt(form.hotelCapacity.trim()),
             hotelCity: form.hotelCity.trim(),
             hotelCountry: form.hotelCountry.trim(),
             hotelPhone: parseInt(form.hotelPhone.trim()),
@@ -167,6 +169,7 @@ export const RegisterNewHotelPage = () => {
         setForm({ // It resets the form to empty
             hotelName: '',
             hotelAddress: '',
+            hotelCapacity: '',
             hotelCity: '',
             hotelCountry: '',
             hotelPhone: '',
@@ -194,6 +197,10 @@ export const RegisterNewHotelPage = () => {
                 <label htmlFor="hotelAddress">Dirección del Hotel</label>
                 <input className='registerNewHotelInput' type="text" name="hotelAddress" id="hotelAddress" value={form.hotelAddress} onChange={handleChange} />
                 <p className='error' id='hotelAddressError'>Este campo es requerido</p>
+
+                <label htmlFor="hotelCapacity">Capacidad del Hotel</label>
+                <input className='registerNewHotelInput' type="number" name="hotelCapacity" id="hotelCapacity" value={form.hotelCapacity} onChange={handleChange} />
+                <p className='error' id='hotelCapacityError'>Este campo es requerido</p>
 
                 <label htmlFor="hotelCity">Ciudad</label>
                 <input className='registerNewHotelInput' type="text" name="hotelCity" id="hotelCity" value={form.hotelCity} onChange={handleChange} />

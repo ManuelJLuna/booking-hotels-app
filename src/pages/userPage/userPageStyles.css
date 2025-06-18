@@ -52,3 +52,70 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+
+@media (max-width: 1024px) {
+  .userPageContainer input,
+  .userPageContainer .saveButton {
+    width: 90%;
+  }
+
+  .reservedHotelsZoneContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .userPageContainer {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .userPageContainer label {
+    font-size: 18px;
+  }
+
+  .userPageContainer input,
+  .userPageContainer .saveButton {
+    width: 95%;
+    font-size: 18px;
+  }
+
+  .userPageContainer h1,
+  .userPageContainer h2 {
+    font-size: 22px;
+  }
+
+  .error {
+    font-size: 16px;
+  }
+
+  .reservedHotelsZoneContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .userPageContainer {
+    width: 98%;
+    padding: 10px;
+  }
+
+  .userPageContainer label {
+    font-size: 16px;
+  }
+
+  .userPageContainer input,
+  .userPageContainer .saveButton {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .userPageContainer h1,
+  .userPageContainer h2 {
+    font-size: 20px;
+  }
+
+  .error {
+    font-size: 14px;
+  }
+}

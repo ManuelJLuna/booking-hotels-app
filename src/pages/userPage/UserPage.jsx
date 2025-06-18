@@ -68,7 +68,7 @@ export const UserPage = () => {
                     </form>
                     <h2>Reservas</h2>
                     <div className='reservedHotelsZoneContainer'>
-                        {logedUser.reservedHotels.map(hotel => {
+                        {logedUser.bookedHotels.map(hotel => {
                             return (<CardComponent
                                 hotel={hotel}
                                 key={hotel.id} />)

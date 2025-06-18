@@ -1,70 +1,56 @@
-.searchZone{
+.searchZone {
     background-color: rgb(120, 210, 217);
-    margin: 0;
-    padding-top: 10px;
-    margin-bottom: -10px;
+    padding: 20px 10px;
     width: 100%;
-    height: 32vh;
     text-align: center;
 }
-.searchZone h1{
+
+.searchZone h1 {
     color: rgb(234, 244, 245);
     font-size: 40px;
-    text-align: center;
-    position: relative;
-    top: 5%;
+    margin-bottom: 20px;
 }
-.searchInputHome{
-    width: 30%;
-    height: 30%;
-    margin: 15px 5px;
+
+.searchControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* permite que baje en pantallas pequeñas */
+}
+
+.searchInputHome {
+    flex: 1 1 200px;
+    padding: 10px 20px;
+    font-size: 18px;
     border-radius: 10px;
     border: none;
-    padding-left: 20px;
-    font-size: 20px;
 }
-.sendSearchButton{
-    width: 10%;
-    padding: 5px;
+
+.datePicker {
+    flex: 1 1 150px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.sendSearchButton {
+    flex: 0 0 auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
-    .searchZone{
-        height: 100%;
-    }
-    .searchInputHome{
-        width: 80%;
-        height: 10%;
-        margin: 5px 5px;
-        font-size: 15px;
-    }
-    .sendSearchButton{
-        width: 60%;
-        padding: 5px;
-        margin-bottom: 25px;
-    }
-    .searchZone h1{
+    .searchZone h1 {
         font-size: 30px;
     }
-}
-
-@media (max-width: 576px) {
-    .searchZone{
-        height: 100%;
-    }
-    .searchInputHome{
-        width: 90%;
-        height: 10%;
-        margin: 5px 5px;
-        font-size: 15px;
-    }
-    .sendSearchButton{
-        width: 60%;
-        padding: 5px;
-        margin-bottom: 25px;
-    }
-    .searchZone h1{
-        font-size: 25px;
-        margin-bottom: 10px;
+    .searchControls {
+        flex-direction: column;
+        gap: 10px;
     }
 }

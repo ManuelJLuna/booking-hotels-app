@@ -1,0 +1,58 @@
+.reviewContainer{
+    width: 90%;
+    max-height: 200px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 10px;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgb(251, 252, 254);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+.reviewContainer:hover{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transform: scale(1.03);
+}
+.ratingFromRating{
+    font-size: 20px;
+    font-weight: bold;
+}
+.comment{
+    font-size: 16px;
+    position: relative;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .reviewContainer {
+    width: 95%;
+    padding: 8px;
+  }
+
+  .ratingFromRating {
+    font-size: 18px;
+  }
+
+  .comment {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviewContainer {
+    width: 98%;
+    padding: 6px;
+  }
+
+  .ratingFromRating {
+    font-size: 16px;
+  }
+
+  .comment {
+    font-size: 14px;
+  }
+}

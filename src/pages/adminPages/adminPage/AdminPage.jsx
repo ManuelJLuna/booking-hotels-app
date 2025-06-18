@@ -18,6 +18,9 @@ export const AdminPage = () => {
                         <p>Here you can manage the hotel data.</p>
                         <button className="admin-button"><NavLink to="hotel/list">List hotels</NavLink></button>
                         <button className="admin-button"><NavLink to="users/list">List users</NavLink></button>
+                        <button className="admin-button"><NavLink to="category/list">List categories</NavLink></button>
+                        <button className="admin-button"><NavLink to="/register/hotel">Register new hotel</NavLink></button>
+                        <button className="admin-button"><NavLink to="/register/category">Register new category</NavLink></button>
                     </div>
                     <div>
                         <p className='adminErrorAccess'>Esta pagina solo esta disponible en PC</p>

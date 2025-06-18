@@ -5,6 +5,8 @@ import { useParams } from 'react-router';
 import { UserContext } from '../../context/userContext/UserContext';
 
 export const EditHotelPage = () => {
+
+    
     const { logedUser } = useContext(UserContext)
     const { updateHotel } = useContext(HotelContext);
     const [ hotelToEdit, setHotelToEdit ] = useState();

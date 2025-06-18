@@ -1,0 +1,77 @@
+.registerNewCategoryInputText {
+    margin: 10px auto;
+    display: block;
+    display: inline-block;
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+    display: inline-block;
+}
+
+.registerNewCategoryInput textarea {
+    margin: 10px auto;
+    display: block;
+    display: inline-block;
+    width: 80%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+    display: inline-block;
+    height: 130px;
+}
+
+.registerNewCategoryPage .submitButton {
+    margin: 20px auto;
+    display: block;
+    width: 50%;
+    height: 35px;
+    font-size: 20px;
+    padding: 0;
+    border-radius: 10px;
+    border: 1.5px outset rgb(162, 232, 241);
+    background-color: rgb(238, 246, 252);
+    transition: all 0.3s ease;
+}
+
+.registerNewCategoryPage label {
+    display: block;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.registerNewCategoryPage .submitButton:hover {
+    background-color: rgb(162, 232, 241);
+    border: 1.5px inset rgb(162, 232, 241);
+    cursor: pointer;
+}
+
+.registerNewCategoryPage {
+    text-align: center;
+    width: 65%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: rgba(162, 232, 241, 0.2);
+    box-shadow: 0 0 10px rgba(110, 193, 199, 0.5);
+}
+
+.onlyPC {
+    display: none;
+    color: red;
+    font-size: 25px;
+}
+
+@media (max-width: 768px) {
+    .registerNewCategoryPage {
+        display: none;
+    }
+
+    .onlyPC {
+        display: block;
+    }
+}

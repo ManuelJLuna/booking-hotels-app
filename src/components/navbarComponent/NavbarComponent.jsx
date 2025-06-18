@@ -51,10 +51,6 @@ export const NavBarComponent = () => {
                     <NavLink className="btn callToActionButton" to='/admin' onClick={() => {
                     document.querySelector('.userNavBarButtonsContainer').classList.toggle("invisible");
                     }} >Administracion</NavLink>}
-                  {logedUser.role == "admin" &&
-                    <NavLink className="btn callToActionButton" to='/register/hotel' onClick={() => {
-                    document.querySelector('.userNavBarButtonsContainer').classList.toggle("invisible");
-                    }} >Registrar hotel</NavLink>}
                   <button className="btn callToActionButton" onClick={() => {
                     unlog();
                     document.querySelector('.userNavBarButtonsContainer').classList.toggle("invisible");

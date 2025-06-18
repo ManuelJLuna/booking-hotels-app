@@ -1,12 +1,12 @@
 import { useContext, useState } from 'react';
 import './LogInPageStyles.css';
 import { UserContext } from '../../context/userContext/UserContext';
-import { useNavigate } from 'react-router';
+import { HotelContext } from '../../context/hotelContext/HotelContext';
 
 export const LogInPage = () => {
     const { logedUser, setLogedUser } = useContext(UserContext);
+    const {setFavouriteHotels, setBookedHotels} = useContext(HotelContext)
     const [form, setForm] = useState({ userEmail: '', userPassword: '' });
-    const navigate = useNavigate()
 
     const fetchUserByEmail = async (email) => {
         try {
@@ -51,7 +51,9 @@ export const LogInPage = () => {
 
         if (user && user.password === form.userPassword) {
             setLogedUser(user); // saves the loged user into the context
-            navigate("/");
+            setFavouriteHotels(user.favouriteHotels)
+            setBookedHotels(user.bookedHotels)
+            history.back()
         } else {
             document.getElementById('userPasswordError').classList.add('errorShow');
         }

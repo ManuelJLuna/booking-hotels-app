@@ -1,4 +1,4 @@
-.signUpPageContainer{
+.signUpPageContainer {
     text-align: center;
     width: 65%;
     margin: 30px auto;
@@ -65,9 +65,75 @@
     cursor: pointer;
 }
 
-@media (max-width: 566px){
+@media (max-width: 1024px) {
+    .signUpPageContainer {
+        width: 80%;
+    }
+
+    .signupUserInput {
+        width: 90%;
+    }
+
     .signUpPageContainer .submitButton {
-    height: 35px;
-    width: 80%;
+        width: 70%;
+    }
 }
+
+@media (max-width: 768px) {
+    .signUpPageContainer {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .signupUserInput {
+        width: 95%;
+        font-size: 18px;
+    }
+
+    .signUpPageContainer label {
+        font-size: 18px;
+    }
+
+    .signUpPageContainer .submitButton {
+        width: 85%;
+        font-size: 18px;
+    }
+
+    .signUpPageContainer .error {
+        font-size: 16px;
+    }
+
+    .signUpPageContainer .showPassword {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .signUpPageContainer {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .signupUserInput {
+        width: 100%;
+        font-size: 16px;
+        padding: 8px;
+    }
+
+    .signUpPageContainer label {
+        font-size: 16px;
+    }
+
+    .signUpPageContainer .submitButton {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .signUpPageContainer .error {
+        font-size: 14px;
+    }
+
+    .signUpPageContainer .showPassword {
+        font-size: 16px;
+    }
 }

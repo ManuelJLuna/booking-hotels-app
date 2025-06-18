@@ -66,7 +66,7 @@ export const UserProvider = ({ children }) => {
         fetchUsersData()
       }
     } catch (err) {
-      console.error('Error al actualizar hotel:', err)
+      console.error('Error al actualizar usuario:', err)
     }
   }
 

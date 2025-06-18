@@ -7,7 +7,8 @@ export const HotelProvider = ({ children }) => {
   const userContext = useContext(UserContext)
   const logedUser = userContext ? userContext.logedUser : null
   const [hotels, setHotels] = useState([])
-  const [reservedHotels, setReservedHotels] = useState(logedUser ? logedUser.reservedHotels : [])
+  const [favouriteHotels, setFavouriteHotels] = useState(logedUser ? logedUser.favouriteHotels : [])
+  const [bookedHotels, setBookedHotels] = useState(logedUser ? logedUser.bookedHotels : [])
 
   // API URL
   const URL_BASE = 'http://localhost:8080/hotel'
@@ -18,6 +19,17 @@ export const HotelProvider = ({ children }) => {
       const r = await fetch(URL_BASE)
       const data = await r.json()
       setHotels(data)
+    } catch (err) {
+      console.error(err)
+      return console.error('Ha ocurrido un error al llamar a la API.')
+    }
+  }
+
+  const fetchHotelDataById = async (id) => {
+    try {
+      const r = await fetch(`${URL_BASE}/${id}`)
+      const data = await r.json()
+      return data;
     } catch (err) {
       console.error(err)
       return console.error('Ha ocurrido un error al llamar a la API.')
@@ -76,7 +88,7 @@ export const HotelProvider = ({ children }) => {
   }, [])
 
   return (
-    <HotelContext.Provider value={{ hotels, addHotel, deleteHotel, updateHotel, reservedHotels, setReservedHotels }}>
+    <HotelContext.Provider value={{ hotels, addHotel, deleteHotel, updateHotel, bookedHotels, setBookedHotels, favouriteHotels, setFavouriteHotels, fetchHotelDataById }}>
       {children}
     </HotelContext.Provider>
   )

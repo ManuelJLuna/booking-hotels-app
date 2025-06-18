@@ -72,3 +72,63 @@
     width: 80%;
 }
 }
+
+
+@media (max-width: 768px) {
+  .logInPageContainer {
+    width: 90%;
+    height: auto;
+    padding: 15px;
+  }
+
+  .loginUserInput {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  .logInPageContainer label {
+    font-size: 18px;
+  }
+
+  .logInPageContainer .submitButton {
+    width: 80%;
+    font-size: 18px;
+  }
+
+  .logInPageContainer .error {
+    font-size: 16px;
+  }
+
+  .logInPageContainer .showPassword {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logInPageContainer {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .loginUserInput {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .logInPageContainer label {
+    font-size: 16px;
+  }
+
+  .logInPageContainer .submitButton {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .logInPageContainer .error {
+    font-size: 14px;
+  }
+
+  .logInPageContainer .showPassword {
+    font-size: 16px;
+  }
+}
