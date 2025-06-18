@@ -62,7 +62,7 @@ src/
 ├── assets/                 # Static files and images
 ├── App.jsx                 # Main application routes
 └── main.jsx                # Application entry point
-```p
+```
 
 ## License
 
